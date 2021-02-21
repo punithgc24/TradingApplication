@@ -9,14 +9,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form action="saveData" method="post">
+<form th:action="@{/saveData}" method="POST">
 		<h1>REGISTER HERE!!!</h1>
-	
 		User Name<input type="text" name="username" required><br>
 		Email ID<input type="text" name="email_id" required><br>
 		Mobile Number<input type="text" name="mobile_number" required><br>
 		Set Password<input type="password" name="password" required><br>
-		<input type="submit">
+		<input type="submit" value="REGISTER">
 	</form>
 </body>
 </html>

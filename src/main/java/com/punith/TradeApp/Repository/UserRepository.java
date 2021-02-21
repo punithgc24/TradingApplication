@@ -6,4 +6,6 @@ import com.punith.TradeApp.Domain.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
+	User findByUsernameAndPassword(String username, String password);
+
 }

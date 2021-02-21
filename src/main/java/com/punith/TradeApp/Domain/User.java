@@ -25,6 +25,6 @@ public class User {
 	private String email_id;
 	@Column(name="mobile_number")
 	private String mobile_number;
-	@Column(name="userpassword")
+	@Column(name="password")
 	private String password;
 }

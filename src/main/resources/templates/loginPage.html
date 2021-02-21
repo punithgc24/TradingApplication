@@ -9,10 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form>
-		User Name<input type="text" name="uname"> <br>
-		Password<input type="password" name="upassword"><br>
-		<button type="button" class="btn btn-primary">LOGIN</button>
+	<form th:action="@{/login}" method="POST">
+		User Name<input type="text" name="username"> <br>
+		Password<input type="password" name="password"><br>
+		<input type="submit" value="LOGIN">
 	</form>
 </body>
 </html>
