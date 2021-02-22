@@ -22,13 +22,13 @@ public class HomeController {
 	@Autowired
 	private UserRepository repo; 
 	
-	public HomeController(UserRepository repo) {
+	PasswordEncoder passwordEncoder;
+	
+	public HomeController(UserRepository repo, PasswordEncoder passwordEncoder) {
 		super();
 		this.repo = repo;
+		this.passwordEncoder = passwordEncoder;
 	}
-	
-	@Autowired
-	PasswordEncoder passwordEncoder;
 
 	@RequestMapping("/")
 	public String home() {
@@ -66,13 +66,14 @@ public class HomeController {
 	@PostMapping("login")
 	public String loginUser(@RequestParam String username, @RequestParam String password) {
 		
-		User user=new User();
-		System.out.println(username);
-		user.setUsername(username);
+//		User user=new User();
+//		System.out.println(username);
+//		user.setUsername(username);
 		//user.setPassword(password);
-		user.setPassword(passwordEncoder.encode(password));
-		System.out.println(user.getPassword());
-		User res=repo.findByUsernameAndPassword(username, password);
+		String encodedPassword=passwordEncoder.encode(password);
+//		user.setPassword(passwordEncoder.encode(password));
+		System.out.println(encodedPassword);
+		User res=repo.findByUsernameAndPassword(username, passwordEncoder.encode(password));
 		System.out.println(res);
 		if(res!=null) {
 			return "successful";
