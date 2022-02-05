@@ -81,18 +81,5 @@ public class HomeController {
 		else {
 			return "loginPage";
 		}
-	
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }

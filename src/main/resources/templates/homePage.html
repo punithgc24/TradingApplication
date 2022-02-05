@@ -2,13 +2,51 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Home</title>
 </head>
-<body>
-	<h1>WELOCME TO AUTOMATED TRADING APP</h1>
-	<a th:href="@{/login}" id="login">Click here for login</a><br><br>
-	<p><a th:href="@{/register}" id="register">Click here to register</a></p><br><br>
-	<p><a th:href="@{/passwordReset}" id="passwordReset">Click here for resetting password</a></p><br><br>
+<style>
+body, html {
+	font-family: "Times New Roman", Times, sans-serif;
+}
 
+	body{
+		background-image:url("images/trade2.jpg");	
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.btn {
+	  background-color: black;
+	  border: none;
+	  color: red;
+	  padding: 12px 16px;
+	  font-size: 16px;
+	  cursor: pointer;
+	}
+	
+	.btn:hover {
+	  background-color: white;
+	}
+	
+	a:visited {
+	  color: white;
+	  background-color: transparent;
+	  text-decoration: none;
+	}
+	a:hover {
+	  color: red;
+	  background-color: transparent;
+	  text-decoration: underline;
+	}
+
+</style>
+<body>
+		<h1 style="color:Lavender;font-size:50px;"align="center">WELCOME TO TRADING APPLICATION</h1>
+		<!-- <button class="btn"><i class="fa fa-home"></i> Home</button><br> -->
+		<a th:href="@{/login}" id="login" style="font-size:25px;">Click here for login</a><br>
+		<br>
+		<a th:href="@{/register}" id="register" style="font-size:25px;">Click here to register</a>
+		
 </body>
 </html>

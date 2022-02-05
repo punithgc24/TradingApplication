@@ -6,6 +6,7 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class User implements UserDetails {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	@Column(name="username")
@@ -31,7 +32,7 @@ public class User implements UserDetails {
 	@Column(name="email_id")
 	private String email_id;
 	@Column(name="mobile_number")
-	private String mobile_number;
+	private long mobile_number;
 	@Column(name="password")
 	private String password;
 	@Override
